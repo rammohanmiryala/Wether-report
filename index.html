@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <!-- style stylesheet CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- css restes -->
+  <link rel="stylesheet" href="reset.css" />
+  <!-- Moment.js -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+  <title>Weatherreport</title>
+</head>
+
+<body>
+  <header class = "container">
+
+    <h1 id="headding">Weather dashboard</h1>
+  </header>
+  <main>
+    <div class="row" id="weathercard">
+      <div class="col-lg-4" id="leftcard">
+        <div class="col">
+          <h2>Search for a City:</h2>
+          <input type="text" class="form-control" id="search-inpurt" placeholder="Hyderabad" />
+          <div class="alert alert-warning" role="alert" style="display:block;" class="error-messge">
+            xxxx
+          </div>
+          <button type="submit" class="btn " id="search-button">Search</button>
+        </div>
+      </div>
+      <div class="col-lg-8" id="rightcard">
+        <div id="weatherreport">
+          <h2 class="city-name">City Name:</h2>
+          <P id="today-temp">Temperature:</P>
+          <P id="today-wind">Windspeed:</P>
+          <P id="today-humidity">Humidity:</P>
+          <P id="uv-index">UV index:</P>
+        </div>
+        <div class="row" id="bottomcard">
+          <div class="col-lg-2 weatherday">
+            <p id="date1">10/11/2021</p>
+            <P id="temp1">temp:</P>
+            <img id="img1" src="" alt="img"></img>
+            <P id="wind1">wind:</P>
+            <P id="humidity1">humidity:</P>
+          </div>
+          <div class="col-lg-2 weatherday">
+            <p id="date2">10/11/2021</p>
+            <P id="temp2">temp:</P>
+            <img id="img2" src="" alt="img"></img>
+            <P id="wind2">wind:</P>
+            <P id="humidity2">humidity:</P>
+
+          </div>
+          <div class="col-lg-2 weatherday">
+            <p id="date3">10/11/2021</p>
+            <P id="temp3">temp:</P>
+            <img id="img3" src="" alt="img"></img>
+            <P id="wind3">wind:</P>
+            <P id="humidity3">humidity:</P>
+          </div>
+          <div class="col-lg-2 weatherday">
+            <p id="date4">10/11/2021</p>
+            <P id="temp4">temp:</P>
+            <img id="img4" src="" alt="img"></img>
+            <P id="wind4">wind:</P>
+            <P id="humidity4">humidity:</P>
+          </div>
+          <div class="col-lg-2 weatherday ">
+            <p id="date5">10/11/2021</p>
+            <P id="temp5">temp:</P>
+            <img id="img5" src="" alt="img"></img>
+            <P id="wind5">wind:</P>
+            <P id="humidity5">humidity:</P>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src=" https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+  <script src="script.js">
+  </script>
+</body>
+
+</html>

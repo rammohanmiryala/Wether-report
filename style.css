@@ -1,0 +1,100 @@
+:root {
+    --blue: #1e90ff;
+    --white: #ffffff;
+
+}
+
+main{
+    box-sizing: border-box;
+    padding: 40px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+header{
+    width: 80%;
+}
+
+body {
+    background: linear-gradient(to right, #8360c3, #2ebf91);
+}
+
+#headding {
+    border: 0px solid #dddddd;
+    text-align: right;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    justify-content: center;
+    color: #dddddd;
+
+}
+
+h2 {
+    color: #dddddd;
+}
+
+#weathercard {
+    border: 0px solid #dddddd;
+    justify-content: space-between;
+    /* margin-top: 00px; */
+
+
+
+}
+
+#leftcard {
+    border: 0px solid #ddd;
+    margin-bottom: 20px;
+
+}
+
+#rightcard {
+    border: 0px solid #ddd;
+
+
+}
+
+#weatherreport {
+    background-color: #2C5364;
+    color: #dddddd;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#bottomcard {
+    justify-content: space-around;
+    margin: 2px;
+}
+
+.weatherday {
+
+    height: 200px;
+    margin: 5px;
+    margin-top: 20px;
+    background-color: #2C5364;
+    color: #dddddd;
+    border-radius: 10px;
+    padding: 10px;
+
+
+}
+
+#search-inpurt {
+    margin: 30px 0px;
+    height: 50px;
+
+
+}
+
+#search-button {
+    padding: 10px 40px;
+    background-color: #8360c3;
+    border: 1px solid #ddd;
+    color: #dddddd
+}
+
+#search-button:hover {
+    background-color: #dddddd;
+    color: #8360c3;
+    border: 2px solid #8360c3;
+}
