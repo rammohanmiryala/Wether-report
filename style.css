@@ -4,14 +4,14 @@
 
 }
 
-main{
+main {
     box-sizing: border-box;
     padding: 40px;
     width: 80%;
     margin: 0 auto;
 }
 
-header{
+header {
     width: 80%;
 }
 
@@ -29,9 +29,7 @@ body {
 
 }
 
-h2 {
-    color: #dddddd;
-}
+h2 {}
 
 #weathercard {
     border: 0px solid #dddddd;
@@ -59,6 +57,7 @@ h2 {
     color: #dddddd;
     border-radius: 10px;
     padding: 20px;
+
 }
 
 #bottomcard {
@@ -75,8 +74,7 @@ h2 {
     color: #dddddd;
     border-radius: 10px;
     padding: 10px;
-
-
+    text-indent: 30%
 }
 
 #search-inpurt {
@@ -97,4 +95,20 @@ h2 {
     background-color: #dddddd;
     color: #8360c3;
     border: 2px solid #8360c3;
+}
+
+.fontsize {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 20px;
+
+
+}
+
+.error-messge {
+    padding: 10px;
+    color: #720000;
+    border: 1px solid #720000;
+    font-weight: bold;
+
 }

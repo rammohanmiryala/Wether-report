@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <header class = "container">
+  <header class="container">
 
     <h1 id="headding">Weather dashboard</h1>
   </header>
@@ -28,19 +28,17 @@
         <div class="col">
           <h2>Search for a City:</h2>
           <input type="text" class="form-control" id="search-inpurt" placeholder="Hyderabad" />
-          <div class="alert alert-warning" role="alert" style="display:block;" class="error-messge">
-            xxxx
-          </div>
-          <button type="submit" class="btn " id="search-button">Search</button>
+          <p class="error-messge" style="display:none;"></p>
+          <button type="submit" class="btn " id="search-button" >Search</button>
         </div>
       </div>
       <div class="col-lg-8" id="rightcard">
         <div id="weatherreport">
           <h2 class="city-name">City Name:</h2>
-          <P id="today-temp">Temperature:</P>
-          <P id="today-wind">Windspeed:</P>
-          <P id="today-humidity">Humidity:</P>
-          <P id="uv-index">UV index:</P>
+          <P>Temperature :<span id="today-temp" class="fontsize"></span></P>
+          <P>Windspeed:<span id="today-wind" class="fontsize"></span></P>
+          <P>Humidity:<span id="today-humidity" class="fontsize"></span></P>
+          <P>UV index:<span id="uv-index" class="fontsize"></span></P>
         </div>
         <div class="row" id="bottomcard">
           <div class="col-lg-2 weatherday">
