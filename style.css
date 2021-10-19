@@ -29,7 +29,9 @@ body {
 
 }
 
-h2 {}
+h2 {
+    color: #dddddd;
+}
 
 #weathercard {
     border: 0px solid #dddddd;
@@ -74,7 +76,8 @@ h2 {}
     color: #dddddd;
     border-radius: 10px;
     padding: 10px;
-    text-indent: 30%
+    
+    
 }
 
 #search-inpurt {
@@ -107,8 +110,21 @@ h2 {}
 
 .error-messge {
     padding: 10px;
-    color: #720000;
-    border: 1px solid #720000;
+    color: #e6cccc;
+    /* border: 1px solid #720000; */
     font-weight: bold;
+
+}
+#uv-index{
+
+    background-color:#a1b8c2;
+    padding:0px 40px;
+    color: #2C5364;
+    border-radius: 3px;
+
+
+}
+.dates,.temps,.climateimg,.winds,.humidits{
+   justify-content:left;
 
 }
