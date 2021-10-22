@@ -12,8 +12,6 @@ var date1el = document.querySelector('#date')
 var bottomcardEl = document.querySelector('#bottomcard')
 
 
-var lonvalue;
-var latvalue;
 
 const todaytime = moment().format("YYYY-MM-DD")
 console.log(todaytime)
@@ -23,7 +21,7 @@ var searchcity = function (event) {
     var cityname = searchEl.value.trim();
     if (cityname) {
         todayweather(cityname);
-        wetherfor5days(cityname);
+
         searchEl.value = '';
 
     } else {
@@ -83,6 +81,8 @@ function todayweather() {
         })
 }
 
+var lonvalue;
+var latvalue;
 
 function uvvalue() {
     console.log(latvalue)
@@ -115,6 +115,7 @@ function wetherfor5days() {
 
         //parmenters current wether api
         .then(function (data) {
+            
             for (var i = 1; i < 6; i++) {
                 // create weatherday bottomdiv//
                 var weatherdayEl = document.createElement("div")
@@ -139,14 +140,17 @@ function wetherfor5days() {
                 windEl.setAttribute("class", "winds")
                 humidityEl.setAttribute("class", "humidits")
 
-
+                
                 var imagefor5days = data['daily'][i].weather[0].icon;
+                var iconurl = "http://openweathermap.org/img/w/" + imagefor5days + ".png";
+
+                console.log(iconurl)
                 var tempfor5days = data['daily'][i].temp.day;
                 var windfor5days = data['daily'][i].wind_speed;
                 var humidityfor5days = data['daily'][i].humidity;
                 dayEl.textContent = moment(todaytime).add([i], 'd').format("YYYY-MM-DD");
                 var roundtemp5days = (((tempfor5days - 273.15) * 9 / 5) + 32)
-                imgEl.textContent = imagefor5days
+                imgEl.textContent = iconurl
                 tempEl.textContent = 'Temp:' + " " + (Math.round(roundtemp5days)) + " " + "F"
                 windEl.textContent = 'wind:' + " " + windfor5days + " " + "MPH"
                 humidityEl.textContent = 'humidity:' + " " + humidityfor5days + " " + "%"
@@ -157,7 +161,6 @@ function wetherfor5days() {
     bottomcardEl.innerHTML = "";
 
 }
-
 
 searchBtn.addEventListener('click', searchcity)
 

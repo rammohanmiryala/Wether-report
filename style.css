@@ -32,6 +32,11 @@ body {
 h2 {
     color: #dddddd;
 }
+img{
+
+    height:30px;
+    width:30px;
+}
 
 #weathercard {
     border: 0px solid #dddddd;
