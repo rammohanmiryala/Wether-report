@@ -19,18 +19,23 @@
 
 <body>
   <header class="container">
-
     <h1 id="headding">Weather dashboard</h1>
   </header>
   <main>
     <div class="row" id="weathercard">
       <div class="col-lg-4" id="leftcard">
-        <form class="col">
-          <h2>Search for a City:</h2>
-          <input type="text" class="form-control" id="search-inpurt" placeholder="Hyderabad" />
-          <p class="error-messge"></p>
-          <button type="submit" class="btn " id="search-button">Search</button>
-        </form>
+        <div class="col">
+          <form class="col">
+            <h2>Search for a City:</h2>
+            <input type="text" class="form-control" id="search-inpurt" placeholder="Hyderabad" />
+            <p class="error-messge"></p>
+            <button type="submit" class="btn " id="search-button">Search</button>
+          </form>
+          <form class="col searchresults">
+            <!-- <button type="submit" class="btn searchcitybutton ">sydney</button> -->
+          </form>
+        </div>
+
       </div>
       <div class="col-lg-8" id="rightcard">
         <div id="weatherreport">
@@ -47,7 +52,7 @@
             <P id="temp"class="temps">temp:</P>
             <P id="wind"class="winds">wind:</P>
             <P id="humidity"class="humidits">humidity:</P>
-          </div> --> -->
+          </div> -->
         </div>
       </div>
     </div>
@@ -58,43 +63,3 @@
 </body>
 
 </html>
-
-
-
-
-<!-- <div class="col-lg-2 weatherday">
-            <p id="date" class="dates">10/11/2021</p>
-            <P id="temp"class="temps">temp:</P>
-            <img id="img" src="" alt="img"class="climateimg"></img>
-            <P id="wind"class="winds">wind:</P>
-            <P id="humidity"class="humidits">humidity:</P>
-          </div> --> -->
-          <!-- <div class="col-lg-2 weatherday">
-            <p id="date2"class="dates">10/11/2021</p>
-            <P id="temp2"class="temps">temp:</P>
-            <img id="img2" src="" alt="img"class="climateimg"></img>
-            <P id="wind2"class="winds">wind:</P>
-            <P id="humidity2"class="humidits">humidity:</P>
-
-          </div>
-          <div class="col-lg-2 weatherday">
-            <p id="date3" class="dates">10/11/2021</p>
-            <P id="temp3"class="temps">temp:</P>
-            <img id="img3" src="" alt="img"class="climateimg"></img>
-            <P id="wind3"class="winds">wind:</P>
-            <P id="humidity3"class="humidits">humidity:</P>
-          </div>
-          <div class="col-lg-2 weatherday">
-            <p id="date4"class="dates">10/11/2021</p>
-            <P id="temp4"class="temps">temp:</P>
-            <img id="img4" src="" alt="img"class="climateimg"></img>
-            <P id="wind4"class="winds">wind:</P>
-            <P id="humidity4"class="humidits">humidity:</P>
-          </div>
-          <div class="col-lg-2 weatherday ">
-            <p id="date5"class="dates">10/11/2021</p>
-            <P id="temp5"class="temps">temp:</P>
-            <img id="img5" src="" alt="img" class="climateimg"></img>
-            <P id="wind5"class="winds">wind:</P>
-            <P id="humidity5"class="humidits">humidity:</P>
-          </div> -->
