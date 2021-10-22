@@ -133,12 +133,7 @@ function wetherfor5days() {
                 weatherdayEl.appendChild(windEl)
                 weatherdayEl.appendChild(humidityEl)
 
-                weatherdayEl.setAttribute("class", "weatherday")
-                dayEl.setAttribute("class", "dates")
-                imgEl.setAttribute("class", "climateimg")
-                tempEl.setAttribute("class", "temps")
-                windEl.setAttribute("class", "winds")
-                humidityEl.setAttribute("class", "humidits")
+                
 
                 
                 var imagefor5days = data['daily'][i].weather[0].icon;
@@ -154,6 +149,14 @@ function wetherfor5days() {
                 tempEl.textContent = 'Temp:' + " " + (Math.round(roundtemp5days)) + " " + "F"
                 windEl.textContent = 'wind:' + " " + windfor5days + " " + "MPH"
                 humidityEl.textContent = 'humidity:' + " " + humidityfor5days + " " + "%"
+
+                weatherdayEl.setAttribute("class", "weatherday")
+                dayEl.setAttribute("class", "dates")
+                imgEl.setAttribute("class", "climateimg")
+                imgEl.setAttribute("src", "iconurl")
+                tempEl.setAttribute("class", "temps")
+                windEl.setAttribute("class", "winds")
+                humidityEl.setAttribute("class", "humidits")
 
             }
 
