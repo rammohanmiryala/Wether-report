@@ -10,26 +10,28 @@ var uvindexEl = document.querySelector('#uv-index')
 var datesEl = document.querySelector('.dates')
 var date1el = document.querySelector('#date')
 var bottomcardEl = document.querySelector('#bottomcard')
-// 
-// var lonvalue;
-// var latvalue;
+
+
+var lonvalue;
+var latvalue;
 
 const todaytime = moment().format("YYYY-MM-DD")
 console.log(todaytime)
 
 var searchcity = function (event) {
-    event.preventDefault();  
+    event.preventDefault();
     var cityname = searchEl.value.trim();
     if (cityname) {
         todayweather(cityname);
         wetherfor5days(cityname);
         searchEl.value = '';
-        
+
     } else {
         displaytime()
     }
 
 };
+
 function displaytime() {
     var time = 3;
     var timerInterval = setInterval(function () {
@@ -65,8 +67,8 @@ function todayweather() {
             todaytempEl.innerHTML = (Math.round(roundtemp)) + " " + "F"
             todaywindEl.innerHTML = windvalue + " " + "MPH"
             todayhumidityEl.innerHTML = todayhumidityvalue + " " + "%"
-            uvvalue(lonvalue,latvalue)
-           
+            uvvalue(lonvalue, latvalue)
+
         })
         .catch(err => {
             var time = 3;
@@ -82,22 +84,7 @@ function todayweather() {
 }
 
 
-
-// function notvalid() {
-//     var time = 3;
-//     var timerInterval = setInterval(function () {
-//         time--;
-//         errormessgeEL.textContent = "city name is not valid"
-//         if (time === 0) {
-//             clearInterval(timerInterval);
-//             errormessgeEL.textContent = " "
-//         }
-//     }, 1000);
-
-// }
-
-
-function uvvalue(lonvalue,latvalue) {
+function uvvalue() {
     console.log(latvalue)
     console.log(lonvalue)
     var uvindexdata = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latvalue + '&lon=' + lonvalue + '&exclude=minutely,hourly&appid=65d399c284fc843c554beb939eac0cb5'
@@ -106,18 +93,17 @@ function uvvalue(lonvalue,latvalue) {
         .then(function (response) {
             return response.json();
         })
-        //parmenters current wether api
         .then(function (data) {
             var indexvalue = data['current']['uvi']
             uvindexEl.innerHTML = indexvalue
-            bottomcardEl.empty();
-            wetherfor5days(lonvalue,latvalue)
+            wetherfor5days()
 
         })
 }
 
 
-function wetherfor5days(lonvalue,latvalue) {
+function wetherfor5days() {
+
     console.log(latvalue)
     console.log(lonvalue)
     var next5days = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latvalue + '&lon=' + lonvalue + '&exclude=minutely,hourly&appid=65d399c284fc843c554beb939eac0cb5'
@@ -126,22 +112,50 @@ function wetherfor5days(lonvalue,latvalue) {
         .then(function (response) {
             return response.json();
         })
+
         //parmenters current wether api
         .then(function (data) {
             for (var i = 1; i < 6; i++) {
-                
+                // create weatherday bottomdiv//
                 var weatherdayEl = document.createElement("div")
-                weatherdayEl.setAttribute("class", "weatherday")
-                bottomcardEl.appendChild(weatherdayEl);
                 var dayEl = document.createElement("p");
-                dayEl.setAttribute("id", "date")
-                weatherdayEl.appendChild(dayEl);
+                var imgEl = document.createElement("img");
+                var tempEl = document.createElement("p");
+                var windEl = document.createElement("p");
+                var humidityEl = document.createElement("p");
+
+                // bottomcardEl is div of the weatherdayEl//
+                bottomcardEl.appendChild(weatherdayEl);
+                weatherdayEl.appendChild(dayEl)
+                weatherdayEl.appendChild(imgEl)
+                weatherdayEl.appendChild(tempEl)
+                weatherdayEl.appendChild(windEl)
+                weatherdayEl.appendChild(humidityEl)
+
+                weatherdayEl.setAttribute("class", "weatherday")
+                dayEl.setAttribute("class", "dates")
+                imgEl.setAttribute("class", "climateimg")
+                tempEl.setAttribute("class", "temps")
+                windEl.setAttribute("class", "winds")
+                humidityEl.setAttribute("class", "humidits")
+
+
+                var imagefor5days = data['daily'][i].weather[0].icon;
+                var tempfor5days = data['daily'][i].temp.day;
+                var windfor5days = data['daily'][i].wind_speed;
+                var humidityfor5days = data['daily'][i].humidity;
                 dayEl.textContent = moment(todaytime).add([i], 'd').format("YYYY-MM-DD");
-                
-            
+                var roundtemp5days = (((tempfor5days - 273.15) * 9 / 5) + 32)
+                imgEl.textContent = imagefor5days
+                tempEl.textContent = 'Temp:' + " " + (Math.round(roundtemp5days)) + " " + "F"
+                windEl.textContent = 'wind:' + " " + windfor5days + " " + "MPH"
+                humidityEl.textContent = 'humidity:' + " " + humidityfor5days + " " + "%"
+
             }
-            bottomcardEl.empty();
+
         })
+    bottomcardEl.innerHTML = "";
+
 }
 
 
@@ -149,16 +163,16 @@ searchBtn.addEventListener('click', searchcity)
 
 
 
-    /* 
-        
-        bottomcard
-        <div class="col-lg-2 weatherday">
-    <p id="date1" class="dates">10/11/2021</p>
-    <P id="temp1"class="temps">temp:</P>
-    <img id="img1" src="" alt="img"class="climateimg"></img>
-    <P id="wind1"class="winds">wind:</P>
-    <P id="humidity1"class="humidits">humidity:</P>
-    </div> */
+/* 
+    
+    bottomcard
+    <div class="col-lg-2 weatherday">
+<p id="date1" class="dates">10/11/2021</p>
+<P id="temp1"class="temps">temp:</P>
+<img id="img1" src="" alt="img"class="climateimg"></img>
+<P id="wind1"class="winds">wind:</P>
+<P id="humidity1"class="humidits">humidity:</P>
+</div> */
 
 
 
